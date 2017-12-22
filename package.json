@@ -1,0 +1,15 @@
+{
+  "name": "tv-video",
+  "version": "0.0.0",
+  "description": "tv video player extracted from TAL",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "standard --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joel Howard <joel.howard@bbc.co.uk>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "standard": "^10.0.3"
+  }
+}
