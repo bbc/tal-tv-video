@@ -1,6 +1,6 @@
 {
   "name": "tv-video",
-  "version": "0.0.1-0",
+  "version": "0.0.1-1",
   "description": "tv video player extracted from TAL",
   "main": "src/index.js",
   "scripts": {
