@@ -1,37 +1,36 @@
+function _getIndexOf (callbacks, that, callback) {
+  return callbacks.reduce(function (acc, next, i) {
+    return (next.that === that && next.fn === callback) ? i : acc
+  }, -1)
+}
+
 function CallbackManager () {
-  this._callbacks = []
-}
-CallbackManager.prototype.addCallback = function addCallback (thisArg, callback) {
-  if (this._getIndexOf(thisArg, callback) === undefined) {
-    this._callbacks.push([thisArg, callback])
-  }
-}
-CallbackManager.prototype.removeCallback = function removeCallback (thisArg, callback) {
-  var foundIndex = this._getIndexOf(thisArg, callback)
-  if (foundIndex !== undefined) {
-    this._callbacks.splice(foundIndex, 1)
-  }
-}
-CallbackManager.prototype._getIndexOf = function _getIndexOf (thisArg, callback) {
-  var result
-  for (var i = 0; i < this._callbacks.length; i++) {
-    if (this._callbacks[i][0] === thisArg && this._callbacks[i][1] === callback) {
-      result = i
-      break
+  var _callbacks = []
+  function addCallback (thisArg, callback) {
+    if (_getIndexOf(_callbacks, thisArg, callback) === -1) {
+      _callbacks.push({ that: thisArg, fn: callback })
     }
   }
-  return result
-}
-CallbackManager.prototype.removeAllCallbacks = function removeAllCallbacks () {
-  this._callbacks = []
-}
-CallbackManager.prototype.callAll = function callAll () {
-  // Convert arguments object to args array.
-  var args = Array.prototype.slice.call(arguments)
-  for (var i = 0; i < this._callbacks.length; i++) {
-    var thisArg = this._callbacks[i][0]
-    var callback = this._callbacks[i][1]
-    callback.apply(thisArg, args)
+  function callAll () {
+    var args = Array.prototype.slice.call(arguments)
+    _callbacks.forEach(function (callback) {
+      callback.fn.apply(callback.that, args)
+    })
+  }
+  function removeCallback (thisArg, callback) {
+    var foundIndex = _getIndexOf(_callbacks, thisArg, callback)
+    if (foundIndex !== -1) {
+      _callbacks.splice(foundIndex, 1)
+    }
+  }
+  function removeAllCallbacks () {
+    _callbacks = []
+  }
+  return {
+    addCallback: addCallback,
+    callAll: callAll,
+    removeCallback: removeCallback,
+    removeAllCallbacks: removeAllCallbacks
   }
 }
 
