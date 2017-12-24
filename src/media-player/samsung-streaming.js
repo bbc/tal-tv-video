@@ -1,4 +1,4 @@
-var utils = require('./utils')
+var utils = require('../utils')
 var MediaPlayer = require('./media-player')
 
 var SamsungStreamingPlayer = utils.inherit(MediaPlayer, function init (rootId, config) {

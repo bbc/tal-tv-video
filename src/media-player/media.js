@@ -1,4 +1,4 @@
-var CallbackManager = require('./callback-manager')
+var CallbackManager = require('../callback-manager')
 
 function MediaPlayer (rootId, config) {
   this._rootId = rootId

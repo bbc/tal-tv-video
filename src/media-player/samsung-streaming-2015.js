@@ -1,4 +1,4 @@
-var utils = require('./utils')
+var utils = require('../utils')
 var SamsungStreamingPlayer = require('./samsung-streaming-player')
 
 var SamsungStreaming2015Player = utils.inherit(SamsungStreamingPlayer)

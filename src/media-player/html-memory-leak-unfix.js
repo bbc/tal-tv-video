@@ -1,4 +1,4 @@
-var utils = require('./utils')
+var utils = require('../utils')
 var HTMLPlayer = require('./html-player')
 
 var HTMLMemoryLeakUnfixPlayer = utils.inherit(HTMLPlayer)
