@@ -31,7 +31,7 @@ HTMLPlayer.prototype.setSource = function setSource (mediaType, url, mimeType) {
     this._mediaElement.addEventListener('loadedmetadata', this._onMetadata.bind(this), false)
     this._mediaElement.addEventListener('pause', this._onPause.bind(this), false)
 
-    utils.prependChildElement(this._rootId, this._mediaElement)
+    utils.prependChildElement(document.getElementById(this._rootId), this._mediaElement)
 
     this._sourceElement = this._generateSourceElement(url, mimeType)
     this._sourceElement.addEventListener('error', this._onSourceError.bind(this), false)

@@ -264,7 +264,7 @@ CEHTMLPlayer.prototype._registerEventHandlers = function _registerEventHandlers 
   }, DEVICE_UPDATE_PERIOD_MS)
 }
 CEHTMLPlayer.prototype._addElementToDOM = function _addElementToDOM () {
-  utils.prependChildElement('body', this._mediaElement)
+  utils.prependChildElement(document.getElementById('body'), this._mediaElement)
 }
 CEHTMLPlayer.prototype._cacheRange = function _cacheRange () {
   if (this._mediaElement) {

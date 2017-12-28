@@ -7,8 +7,7 @@ module.exports = {
     }
     return el
   },
-  prependChildElement: function prependChildElement (id, child) {
-    var el = document.getElementById(id)
+  prependChildElement: function prependChildElement (el, child) {
     if (el.childNodes.length > 0) {
       el.insertBefore(child, el.childNodes[0])
     } else {
