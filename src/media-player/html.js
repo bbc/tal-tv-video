@@ -1,5 +1,5 @@
 var utils = require('../utils')
-var MediaPlayer = require('./media-player')
+var MediaPlayer = require('./media')
 
 var HTMLPlayer = utils.inherit(MediaPlayer)
 HTMLPlayer.prototype.setSource = function setSource (mediaType, url, mimeType) {

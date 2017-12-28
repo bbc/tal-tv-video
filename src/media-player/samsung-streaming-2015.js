@@ -1,5 +1,5 @@
 var utils = require('../utils')
-var SamsungStreamingPlayer = require('./samsung-streaming-player')
+var SamsungStreamingPlayer = require('./samsung-streaming')
 
 var SamsungStreaming2015Player = utils.inherit(SamsungStreamingPlayer)
 SamsungStreaming2015Player.prototype.setSource = function setSource (mediaType, url, mimeType) {

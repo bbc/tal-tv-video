@@ -1,5 +1,5 @@
 var utils = require('../utils')
-var HTMLPlayer = require('./html-player')
+var HTMLPlayer = require('./html')
 
 var HTMLMemoryLeakUnfixPlayer = utils.inherit(HTMLPlayer)
 HTMLMemoryLeakUnfixPlayer.prototype._unloadMediaSrc = function () {}

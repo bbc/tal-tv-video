@@ -1,5 +1,5 @@
 var utils = require('../utils')
-var HTMLPlayer = require('./html-player')
+var HTMLPlayer = require('./html')
 
 var HTMLUntypedPlayer = utils.inherit(HTMLPlayer)
 HTMLUntypedPlayer.prototype._unloadMediaSrc = function () {}

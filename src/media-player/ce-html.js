@@ -1,5 +1,5 @@
 var utils = require('../utils')
-var MediaPlayer = require('./media-player')
+var MediaPlayer = require('./media')
 
 var CEHTMLPlayer = utils.inherit(MediaPlayer)
 CEHTMLPlayer.prototype.PLAY_STATE_STOPPED = 0
