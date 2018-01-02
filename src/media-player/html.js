@@ -180,7 +180,7 @@ HTMLPlayer.prototype.stop = function stop () {
       break
   }
 }
-HTMLPlayer.reset = function reset () {
+HTMLPlayer.prototype.reset = function reset () {
   switch (this.getState()) {
     case this.STATE.EMPTY:
       break
